@@ -7,6 +7,11 @@ use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\Kategori;
 use App\Models\Pelanggaran;
+
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PelanggaranExport;
+use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 
 class PelanggaranController extends Controller
@@ -60,6 +65,10 @@ class PelanggaranController extends Controller
         $siswa = Siswa::with('user')->where('id_kelas', Kelas::where('id', $kelas)->first()->id)->get();
 
         return response()->json(['siswa' => $siswa]);
+    }
+
+    public function pelanggaranexport(){
+        return Excel::download(new PelanggaranExport, 'pelanggaran.xlsx');
     }
 
 }

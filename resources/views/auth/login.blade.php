@@ -81,11 +81,11 @@
                                 <input name="email" id="email" type="email" value="{{ old('email') }}"
                                     placeholder="{{ __('Email Address') }}" class="@error('email') is-invalid @enderror"
                                     required autocomplete="off">
-                                @error('email')
+                                <!-- @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                                @enderror
+                                @enderror -->
                             </div>
                         </div>
 
@@ -93,11 +93,11 @@
                             <span class="fa fa-lock" aria-hidden="true"></span>
                             <div class="wthree-field">
                                 <input name="password" id="password" type="Password" class="@error('password') is-invalid @enderror" placeholder="{{ __('Password') }}">
-                                @error('password')
+                                <!-- @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror -->
                             </div>
                         </div>
 

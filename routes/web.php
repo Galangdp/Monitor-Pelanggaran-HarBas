@@ -65,8 +65,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/input-pelanggaran', [PelanggaranController::class, 'view_input'])->name('input-pelanggaran')->middleware('checkLevel:admin,guru');
     Route::get('/get-nisn', [PelanggaranController::class, 'get_nisn'])->middleware('checkLevel:admin, guru');
     Route::get('/get-nama-by-kelas', [PelanggaranController::class, 'get_nama_by_kelas'])->middleware('checkLevel:admin, guru');
-});
+    Route::get('/exportpelanggaran', [PelanggaranController::class, 'pelanggaranexport'])->name('pelanggaranexport')->middleware('checkLevel:admin');
 
     // Siswa
     // Route::get('/detail/siswa', [SiswaController::class, 'index'])->name('siswa')->middleware('checkLevel:siswa');
-    Route::get('/detail/siswa', [SiswaController::class, 'detail'])->name('siswa')->middleware('checkLevel:siswa');
+    Route::get('/detail/siswa/{id}', [SiswaController::class, 'detail'])->name('siswa')->middleware('checkLevel:siswa');
+});
+

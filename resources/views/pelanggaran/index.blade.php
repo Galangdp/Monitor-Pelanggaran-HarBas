@@ -6,6 +6,16 @@
         <table id="pelanggaran-table" class="table custom-table table-striped table-bordered table-hover" style="width: 100%;">
         </table>
     </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="col-md-6 mt-4">
+                <a href="{{route ('pelanggaranexport')}}" class="btn btn-danger">Export</a>
+            </div>
+            <div class="col-md-6 mt-4">
+                <a href="" class="btn btn-primary">Import</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

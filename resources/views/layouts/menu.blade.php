@@ -56,12 +56,6 @@
     <i class='bx bx-receipt nav_icon}' size='lg'></i> 
     <span class="nav_name">Pelanggaran</span> 
 </a>
-
-
-<a href="/detail/siswa" class="nav_link {{ Request::is('detail/siswa/{$id}') ? 'active' : '' }}"> 
-    <i class='bx bx-receipt nav_icon}' size='lg'></i> 
-    <span class="nav_name">Detail Siswa</span> 
-</a>
 @endif
 
 @if(auth() -> user() -> level == 'guru')
